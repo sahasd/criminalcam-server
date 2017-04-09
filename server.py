@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, request, make_response, url_for, send_file
 import flask
 import base64
@@ -105,28 +104,6 @@ def felonies():
 
 if __name__ == "__main__":
     app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
-=======
-from flask import Flask, request
-import base64
-from PIL import Image
-import io
-
-app = Flask(__name__)
-
-
-@app.route("/")
-def hello():
-    return "Hello World!"
-
-@app.route('/upload', methods=['POST']) 
-def upload():
-	string = base64.b64decode(request.form['image'])
-	image = Image.open(io.BytesIO(string))
-	return "nothing";
-
-if __name__ == "__main__":
-    app.run()
->>>>>>> 55196a6012411b50f58cedb6b6defb11f6ee1e53
 
 
 
